@@ -1,71 +1,41 @@
 # Seja um desenvolvedor na Profit-e RJ
+instalação do node.js
 
-Você conhece a Profite? Nós somos a maior agência implantadora de e-commerce do Brasil. Temos como clientes grandes nomes, tais como: O Boticário, Tim, C&A, Shopfácil, Electrolux, Havaianas, Mizuno entre outros.
+Instalação do grunt:
 
-Estamos procurando `Desenvolvedores(as) Front-end`, com sólidos conhecimentos em HTML, CSS e Javascript para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+para instalar: npm install grunt;
 
-O perfil que procuramos é de uma pessoa que seja atenta aos detalhes e capaz de desenvolver soluções escaláveis. De fácil relacionamento, organizado(a) e comprometido(a) com prazos e qualidade das entregas. Confira abaixo mais informações da vaga.
-
-##### Local
-Escritório no Rio de Janeiro - Centro (https://goo.gl/maps/wu9PE5DQiEk)
-
-##### Benefícios
-* Vale-transporte;
-* Vale-refeição;
-* Vale-alimentação;
-* Plano de saúde e odontológico;
-* Diferenciais
-* Folga de aniversário
-* Chopp grátis
-* Estrutura irada do WeWork com vista para a Marina da Glória. [Conheça o espaço](https://www.instagram.com/explore/locations/110315772997101/wework-carioca/)
-* Plano de Carreira
-* Cursos (Alura, Udemy ..)
-
-##### Requisitos Obrigatórios:
-
-* Html5, css3;
-* Javascript, jquery;
-* Versionamento Git;
-* Grunt;
-* Sass;
-* Sites responsivos;
-* Cross-browser (IE10+);
-* Iniciativa, criatividade e colaboração;
-* Boas práticas: reutilização de código, semântica, organização, performance.
+ e suas dependências:
 
 
-##### Desejáveis:
-* Experiência com algum CMS
-* Conhecimento/Experiência em Vtex
-* React
+concat:
+npm install grunt-contrib-concat --save-dev
+
+css minificado:
+npm install grunt-contrib-css-min --save-dev  
+
+sass
+npm install  node-sass grunt-contrib-sass --save-dev   
+
+js minificado:
+
+npm install --save-dev grunt-contrib-uglify
+
+instalação watch :
+npm install grunt-contrib-watch --save-dev
 
 
-##### Contratação
-CLT (faixa salarial de acordo com a senioridade)
+rodar o sass:  grunt sass
+rodar o js grunt uglify
 
-#
-#
-#### Como concorrer a vaga:
-* Forka esse projeto;
-* No seu fork, codifique o layout seguindo as instruções abaixo;
-* Atualize o readme com as instruções necessárias para rodar o seu código;
-* Faça um pull request (ou envie para getdevs@profite.com.br).
+adicionar permissão para o arquivo data.json para abrir no Chrome
 
-##### Instruções para o teste:
+no command terminal  digitar:
 
-O layout se encontra na pasta "layout" em PSD e JPG, mas também pode ser acessado em https://adobe.ly/2Jj9AK2 e https://adobe.ly/2IrzKcF
+cd C:\Program Files (x86)\Google\Chrome\Application
+e executar esse  comando
+chrome --allow-file-access-from-files   c:\get-devs-data.JSON
 
-##### Obrigatório
-* HTML5 e CSS3
-* Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-* Interação com JSON para filtar os produtos
-* Funcionalidade de adicionar ao carrinho
-* Funcionalidade de carregar mais produtos
-* Não utilizar Bootstrap;
-* Responsividade
 
-##### Bônus
-* Javascript sem plugins e modular
-* Grunt, Gulp ou similar
 
-###### Dúvidas: getdevs@profite.com.br
+obs: para tela desktop e mobile existe um javascript próprio para cada um precisando de reload.

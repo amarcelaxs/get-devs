@@ -1,0 +1,76 @@
+{
+	"prod": [
+		{
+			"image":"produto1.jpg",
+			"produto": "Bata Bordada",
+			"preco":"R$ 398",
+			"frase":"até 5x  de R$ 30,00",
+			"url": "#",
+			"oferta":""
+		},
+    {
+      "image":"produto2.jpg",
+      "produto": "Chapéu de Praia",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto3.jpg",
+      "produto": "Vestido Texturado",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":"R$ 189"
+    },
+    {
+      "image":"produto4.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto5.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto6.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto7.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto8.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    },
+    {
+      "image":"produto9.jpg",
+      "produto": "Bata Bordada",
+      "preco":"R$ 398",
+      "frase":"até 5x  de R$ 30,00",
+      "url": "#",
+      "oferta":""
+    }
+	]
+}

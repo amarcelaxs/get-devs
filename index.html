@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loja</title>
+  <link rel="stylesheet" href="dist/css/grid.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/css/style.min.css">
+  <link rel="stylesheet" href="dist/css/fontawesome.css">
+  <script src="dist/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script-->
+</head>
+<body>
+  <header>
+    <div class="header-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col img-logo col-2">
+            <img src="layout/imagens/logo-profite.png">
+          </div>
+          <div class=" col col-2">
+            <div class="btn-lightbox">
+              <i class="fas fa-shopping-bag"></i>
+              <div class="quant-items"  >
+              <span id="qtd">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="background"></div>
+          <div class="box-carrinho"><div class="btn-close"><i class="fas fa-times"></i></div>
+            <div class="col">
+              <legend class="car">Carrinho vazio</legend>
+              <div id="carrinho">
+                <legend class="remove-produto">Carrinho (clique no produto para remove-lo do carrinho)</legend>
+                <div id="itens"></div>
+              </div>
+            </div>
+            <div class="buttons-carrinho">
+              <button type="button"  id="finalizar">Finalizar Compra</button>
+              <button type="button"  id="limpar">Limpar Carrinho</button>
+              <button type="button" id="total">Total</button>
+            </div>
+            <div class="col rodape" style="
+                margin: 18% 0 0;
+            "><button type="button" class="btn-close" >Fechar</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col col-sidebar">
+          <div class="title-category">
+            <h1>Vestidos</h1>
+          </div>
+          <div class="col filtro">
+            <p>Cores</p>
+            <div id="div01"></div>
+            <ul class="squaredOne">
+              <li class="filter-color">
+              	<label class="clearfix">
+                	<input class="sli_checkbox" id="chk01" type="checkbox"  value="Amarelo"  checked="checked">
+                  <span><a class="sli_facet_link" href="#">Amarelo</a></span>
+              	</label>
+              </li>
+              <li class="filter-color">
+              	<label class="clearfix">
+                	<input class="sli_checkbox" id="chk02" type="checkbox"  value="Azul" >
+                  <span><a class="sli_facet_link" href="#">Azul</a></span>
+              	</label>
+              </li>
+              <li class="filter-color">
+              	<label class="clearfix">
+                	<input class="sli_checkbox" id="chk03" type="checkbox"  value="Branco" >
+                  <span><a class="sli_facet_link" href="#">Branco</a></span>
+              	</label>
+              </li>
+              <li class="filter-color">
+              	<label class="clearfix">
+                	<input class="sli_checkbox" id="chk04" type="checkbox"  value="Cinza" >
+                  <span><a class="sli_facet_link" href="#">Cinza</a></span>
+              	</label>
+              </li>
+              <li class="filter-color">
+              	<label class="clearfix">
+                	<input class="sli_checkbox" id="chk05" type="checkbox"  value="Laranja" >
+                  <span><a class="sli_facet_link" href="#">Laranja</a></span>
+              	</label>
+              </li>
+            </ul>
+            <div class="more">
+              <i class="fas fa-angle-down"></i>
+              <a href="#" class="see-more">Ver todas as cores</a>
+              <hr>
+            </div>
+          </div>
+          <div class="col size">
+            <p>Tamanho</p>
+            <div class="size-number">
+              <ul class="list-size">
+                <li><a href="#">P</a></li>
+                <li><a href="#">M</a></li>
+                <li><a href="#">G</a></li>
+                <li><a href="#">GG</a></li>
+                <li><a href="#">U</a></li>
+                <li><a href="#">36</a></li>
+                <li><a href="#">38</a></li>
+                <li><a href="#">40</a></li>
+                <li><a href="#">42</a></li>
+                <li><a href="#">44</a></li>
+                <li><a href="#">46</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col preco">
+            <p>Faixa de Preço</p>
+            <div  class="price-number">
+              <ul class="priceOne">
+                <li class="filter-price">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="de R$  0 até R$ 50"  checked="checked">
+                    <span><a class="sli_facet_link" href="#">de R$  0 até R$ 50</a></span>
+                	</label>
+                </li>
+                <li class="filter-price">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="de R$  51 até R$ 150" >
+                    <span><a class="sli_facet_link" href="#">de R$  51 até R$ 150</a></span>
+                	</label>
+                </li>
+                <li class="filter-price">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="de R$  151 até R$ 300" >
+                    <span><a class="sli_facet_link" href="#">de R$  151 até R$ 300</a></span>
+                	</label>
+                </li>
+                <li class="filter-price">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="de R$  301 até R$ 500" >
+                    <span><a class="sli_facet_link" href="#">de R$  301 até R$ 500</a></span>
+                	</label>
+                </li>
+                <li class="filter-price">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="a partir de R$ 500" >
+                    <span><a class="sli_facet_link" href="#">a partir de R$ 500</a></span>
+                	</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col col-content produtos">
+          <div id="para"></div>
+          <div class="col menu-m">
+            <div class="col col-2  buttons">
+              <div class="dropdown">
+                <button class="dropbtn btn-filter m-hide">Filtrar
+                  <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Mais recentes</a>
+                  <a href="#">Menor preço</a>
+                  <a href="#">Maior preço</a>
+                    <div class="col filtro">
+                      <p>Cores</p>
+                      <ul class="squaredOne">
+                        <li class="filter-color">
+                        	<label class="clearfix">
+                          	<input class="sli_checkbox" type="checkbox"  value="Amarelo"  checked="checked">
+                            <span><a class="sli_facet_link" href="#">Amarelo</a></span>
+                        	</label>
+                        </li>
+                        <li class="filter-color">
+                        	<label class="clearfix">
+                          	<input class="sli_checkbox" type="checkbox"  value="Azul" >
+                            <span><a class="sli_facet_link" href="#">Azul</a></span>
+                        	</label>
+                        </li>
+                        <li class="filter-color">
+                        	<label class="clearfix">
+                          	<input class="sli_checkbox" type="checkbox"  value="Branco" >
+                            <span><a class="sli_facet_link" href="#">Branco</a></span>
+                        	</label>
+                        </li>
+                        <li class="filter-color">
+                        	<label class="clearfix">
+                          	<input class="sli_checkbox" type="checkbox"  value="Cinza" >
+                            <span><a class="sli_facet_link" href="#">Cinza</a></span>
+                        	</label>
+                        </li>
+                        <li class="filter-color">
+                        	<label class="clearfix">
+                          	<input class="sli_checkbox" type="checkbox"  value="Laranja" >
+                            <span><a class="sli_facet_link" href="#">Laranja</a></span>
+                        	</label>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col m-hide menu-mobile-filtro   toc ">
+              <a href="#" class="close"><i class="fas fa-times"></i></a>
+              <p>Filtrar</p>
+              <p class="colors title" id="btn-cor">Cores
+                <a href="#" id="btn-cor" class="open"><i class="fas fa-plus"></i></a>
+                <a href="#" class="close"><i class="far fa-window-minimize"></i></a>
+              </p>
+              <ul class="menu squaredOne">
+                <li class="filter-color">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="Amarelo"  checked="checked">
+                    <span><a class="sli_facet_link" href="#">Amarelo</a></span>
+                	</label>
+                </li>
+                <li class="filter-color">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="Azul" >
+                    <span><a class="sli_facet_link" href="#">Azul</a></span>
+                	</label>
+                </li>
+                <li class="filter-color">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="Branco" >
+                    <span><a class="sli_facet_link" href="#">Branco</a></span>
+                	</label>
+                </li>
+                <li class="filter-color">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="Cinza" >
+                    <span><a class="sli_facet_link" href="#">Cinza</a></span>
+                	</label>
+                </li>
+                <li class="filter-color">
+                	<label class="clearfix">
+                  	<input class="sli_checkbox" type="checkbox"  value="Laranja" >
+                    <span><a class="sli_facet_link" href="#">Laranja</a></span>
+                	</label>
+                </li>
+              </ul>
+              <div class="col buttons-filtro-colors">
+                <div class="col col-2">
+                  <a  href="#">Aplicar</a>
+                </div>
+                <div class="col col-2">
+                  <a  href="#">Limpar</a>
+                </div>
+              </div>
+              <p class="colors title" id="size">Tamanho
+                <a href="#" id="size" class="open"><i class="fas fa-plus"></i></a>
+                <a href="#" class="close"><i class="far fa-window-minimize"></i></a>
+              </p>
+              <div class="size-filtro size-number">
+                <ul class="menu list-size">
+                  <li><a href="#">P</a></li>
+                  <li><a href="#">M</a></li>
+                  <li><a href="#">G</a></li>
+                  <li><a href="#">GG</a></li>
+                  <li><a href="#">U</a></li>
+                  <li><a href="#">36</a></li>
+                  <li><a href="#">38</a></li>
+                  <li><a href="#">40</a></li>
+                  <li><a href="#">42</a></li>
+                  <li><a href="#">44</a></li>
+                  <li><a href="#">46</a></li>
+                </ul>
+              </div>
+              <div class="col buttons-filtro-size">
+                <div class="col col-2">
+                  <a  href="#">Aplicar</a>
+                </div>
+                <div class="col col-2">
+                  <a  href="#">Limpar</a>
+                </div>
+              </div>
+              <p class="colors title" id="btn-preco">Preços
+                <a href="#" id="btn-preco" class="open"><i class="fas fa-plus"></i></a>
+                <a href="#" class="close"><i class="far fa-window-minimize"></i></a>
+              </p>
+              <div  class="price-number">
+                <ul class="priceOne">
+                  <li class="filter-price">
+                  	<label class="clearfix">
+                    	<input class="sli_checkbox" type="checkbox"  value="de R$  0 até R$ 50"  checked="checked">
+                      <span><a class="sli_facet_link" href="#">de R$  0 até R$ 50</a></span>
+                  	</label>
+                  </li>
+                  <li class="filter-price">
+                  	<label class="clearfix">
+                    	<input class="sli_checkbox" type="checkbox"  value="de R$  51 até R$ 150" >
+                      <span><a class="sli_facet_link" href="#">de R$  51 até R$ 150</a></span>
+                  	</label>
+                  </li>
+                  <li class="filter-price">
+                  	<label class="clearfix">
+                    	<input class="sli_checkbox" type="checkbox"  value="de R$  151 até R$ 300" >
+                      <span><a class="sli_facet_link" href="#">de R$  151 até R$ 300</a></span>
+                  	</label>
+                  </li>
+                  <li class="filter-price">
+                  	<label class="clearfix">
+                    	<input class="sli_checkbox" type="checkbox"  value="de R$  301 até R$ 500" >
+                      <span><a class="sli_facet_link" href="#">de R$  301 até R$ 500</a></span>
+                  	</label>
+                  </li>
+                  <li class="filter-price">
+                  	<label class="clearfix">
+                    	<input class="sli_checkbox" type="checkbox"  value="a partir de R$ 500" >
+                      <span><a class="sli_facet_link" href="#">a partir de R$ 500</a></span>
+                  	</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="col buttons-filtro-price">
+                <div class="col col-2">
+                  <a  href="#">Aplicar</a>
+                </div>
+                <div class="col col-2">
+                  <a  href="#">Limpar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-2  buttons">
+              <div class="dropdown">
+                <button class="dropbtn btn-order">Ordenar por
+                  <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Mais recentes</a>
+                  <a href="#">Menor preço</a>
+                  <a href="#">Maior preço</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-hide menu-mobile   toc ">
+              <a href="#" class="close"><i class="fas fa-times"></i></a>
+              <p>Ordenar</p>
+              <ul class="ordernar menu">
+            		<li><a href="#">Mais recentes</a></li>
+            		<li><a href="#">Menor preço</a></li>
+            		<li><a href="#">Maior preço</a></li>
+            	</ul>
+            </div>
+          </div>
+          <div class="col clothes item">
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto0" data-placement="bottom" title="Produto 01 - R$ 398">
+                <h2 class="title-produto0" id="title-produto"></h2>
+                <div class="box">
+                  <p class="valor-produto0" ></p>
+                  <span class="info0" ></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto1" data-placement="bottom" title="Produto 02 - R$ 398" >
+                <h2 class="title-produto1" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto1"></p>
+                  <span class="info1" ></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto2" data-placement="bottom" title="Produto 03 - R$ 398">
+                <h2 class="title-produto2" id="title-produto "></h2>
+                <div class="box">
+                  <p  class="valor-produto2"></p>
+                  <span class="info2"></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto3" data-placement="bottom" title="Produto 04 - R$ 398">
+                <h2 class="title-produto3" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto3"></p>
+                  <span class="info3"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto4" data-placement="bottom" title="Produto 05 - R$ 398">
+                <h2 class="title-produto4" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto4"></p>
+                  <span class="info4"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto5" data-placement="bottom" title="Produto 06 - R$ 398">
+                <h2 class="title-produto5" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto5"></p>
+                  <span class="info5"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto6" data-placement="bottom" title="Produto 07 - R$ 398">
+                <h2 class="title-produto6" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto6"></p>
+                  <span class="info6"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto7" data-placement="bottom" title="Produto 08 - R$ 398">
+                <h2 class="title-produto7" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto7"></p>
+                  <span class="info7"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto8" data-placement="bottom" title="Produto 09 - R$ 398">
+                <h2 class="title-produto8" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto8"></p>
+                  <span class="info8"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div class="col clothes item">
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto0" data-placement="bottom" title="Produto 01 - R$ 398">
+                <h2 class="title-produto0" id="title-produto"></h2>
+                <div class="box">
+                  <p class="valor-produto0" ></p>
+                  <span class="info0" ></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto1" data-placement="bottom" title="Produto 02 - R$ 398">
+                <h2 class="title-produto1" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto1"></p>
+                  <span class="info1" ></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto2" data-placement="bottom" title="Produto 03 - R$ 398">
+                <h2 class="title-produto2" id="title-produto "></h2>
+                <div class="box">
+                  <p  class="valor-produto2"></p>
+                  <span class="info2"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto3" data-placement="bottom" title="Produto 04 - R$ 398">
+                <h2 class="title-produto3" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto3"></p>
+                  <span class="info3"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto4" data-placement="bottom" title="Produto 05 - R$ 398">
+                <h2 class="title-produto4" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto4"></p>
+                  <span class="info4"></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto5" data-placement="bottom" title="Produto 06 - R$ 398">
+                <h2 class="title-produto5" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto5"></p>
+                  <span class="info5"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto6" data-placement="bottom" title="Produto 07 - R$ 398">
+                <h2 class="title-produto6" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto6"></p>
+                  <span class="info6"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto7" data-placement="bottom" title="Produto 08 - R$ 398">
+                <h2 class="title-produto7" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto7"></p>
+                  <span class="info7"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto8" data-placement="bottom" title="Produto 09 - R$ 398">
+                <h2 class="title-produto8" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto8"></p>
+                  <span class="info8"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div class="col clothes item">
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto0" data-placement="bottom" title="Produto 01 - R$ 398">
+                <h2 class="title-produto0" id="title-produto"></h2>
+                <div class="box">
+                  <p class="valor-produto0" ></p>
+                  <span class="info0" ></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto1" data-placement="bottom" title="Produto 02 - R$ 398">
+                <h2 class="title-produto1" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto1"></p>
+                  <span class="info1" ></span>
+                  <span class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto2" data-placement="bottom" title="Produto 03 - R$ 398">
+                <h2 class="title-produto2" id="title-produto "></h2>
+                <div class="box">
+                  <p  class="valor-produto2"></p>
+                  <span class="info2"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto3" data-placement="bottom" title="Produto 04 - R$ 398">
+                <h2 class="title-produto3" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto3"></p>
+                  <span class="info3"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto4" data-placement="bottom" title="Produto 05 - R$ 398">
+                <h2 class="title-produto4" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto4"></p>
+                  <span class="info4"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto5" data-placement="bottom" title="Produto 06 - R$ 398">
+                <h2 class="title-produto5" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto5"></p>
+                  <span class="info5"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto6" data-placement="bottom" title="Produto 07 - R$ 398">
+                <h2 class="title-produto6" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto6"></p>
+                  <span class="info6"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto7" data-placement="bottom" title="Produto 08 - R$ 398">
+                <h2 class="title-produto7" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto7"></p>
+                  <span class="info7"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto8" data-placement="bottom" title="Produto 09 - R$ 398">
+                <h2 class="title-produto8" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto8"></p>
+                  <span class="info8"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div class="col clothes item">
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto0" data-placement="bottom" title="Produto 01 - R$ 398">
+                <h2 class="title-produto0" id="title-produto"></h2>
+                <div class="box">
+                  <p class="valor-produto0" ></p>
+                  <span class="info0" ></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto1" data-placement="bottom" title="Produto 02 - R$ 398">
+                <h2 class="title-produto1" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto1"></p>
+                  <span class="info1" ></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto2" data-placement="bottom" title="Produto 03 - R$ 398">
+                <h2 class="title-produto2" id="title-produto "></h2>
+                <div class="box">
+                  <p  class="valor-produto2"></p>
+                  <span class="info2"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto3" data-placement="bottom" title="Produto 04 - R$ 398">
+                <h2 class="title-produto3" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto3"></p>
+                  <span class="info3"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto4" data-placement="bottom" title="Produto 05 - R$ 398">
+                <h2 class="title-produto4" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto4"></p>
+                  <span class="info4"></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto5" data-placement="bottom" title="Produto 06 - R$ 398">
+                <h2 class="title-produto5" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto5"></p>
+                  <span class="info5"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto6" data-placement="bottom" title="Produto 07 - R$ 398">
+                <h2 class="title-produto6" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto6"></p>
+                  <span class="info6"></span>
+                  <span class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto7" data-placement="bottom" title="Produto 08 - R$ 398">
+                <h2 class="title-produto7" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto7"></p>
+                  <span class="info7"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto8" data-placement="bottom" title="Produto 09 - R$ 398">
+                <h2 class="title-produto8" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto8"></p>
+                  <span class="info8"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div class="col clothes item">
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto0" data-placement="bottom" title="Produto 01 - R$ 398">
+                <h2 class="title-produto0" id="title-produto"></h2>
+                <div class="box">
+                  <p class="valor-produto0" ></p>
+                  <span class="info0" ></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto1" data-placement="bottom" title="Produto 02 - R$ 398">
+                <h2 class="title-produto1" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto1"></p>
+                  <span class="info1" ></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto2" data-placement="bottom" title="Produto 03 - R$ 398">
+                <h2 class="title-produto2" id="title-produto "></h2>
+                <div class="box">
+                  <p  class="valor-produto2"></p>
+                  <span class="info2"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto3" data-placement="bottom" title="Produto 04 - R$ 398">
+                <h2 class="title-produto3" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto3"></p>
+                  <span class="info3"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto4" data-placement="bottom" title="Produto 05 - R$ 398">
+                <h2 class="title-produto4" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto4"></p>
+                  <span class="info4"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto5" data-placement="bottom" title="Produto 06 - R$ 398">
+                <h2 class="title-produto5" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto5"></p>
+                  <span class="info5"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto6" data-placement="bottom" title="Produto 07 - R$ 398">
+                <h2 class="title-produto6" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto6"></p>
+                  <span class="info6"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto7" data-placement="bottom" title="Produto 08 - R$ 398">
+                <h2 class="title-produto7" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto7"></p>
+                  <span class="info7"></span>
+                  <span  class="cart"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col col-3 prod-1 ">
+              <div class="" id="">
+                <img  id="img-produto prod1" src="" class="produto img-produto8" data-placement="bottom" title="Produto 09 - R$ 398">
+                <h2 class="title-produto8" id="title-produto "></h2>
+                <div class="box">
+                  <p class="valor-produto8"></p>
+                  <span class="info8"></span>
+                  <span  class="cart "><i class="fas fa-shopping-cart"></i></span>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div class="col btn-more">
+            <a href="#" class="veja-mais" id="loadmore">Carregar Mais</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="col end-footer">
+    <p>Profite - CNPJ 05.559.134/0001-60 End: Voluntários da Pátria, 3</p>
+  </div>
+</footer>
+  <script src="dist/js/main.min.js"></script>
+</body>
+</html>
